@@ -1,9 +1,13 @@
 import smtplib
 import ssl
+import json
 
-password = "baerchenbot1!"
+with open('email.txt') as json_file:
+    data = json.load(json_file)
+    sender_email = data["email"]
+    password = data["pass"]
+
 port = 465
-sender_email = "baerchen.bot@gmail.com"
 message = """\
 Subject: Ich habe einen Deal gesichert!
 
